@@ -63,42 +63,6 @@ const categoryMeta = {
     eyebrow: '🌴 Nadan Fish Fry • Idli Sambar Chutneys • Ghee Dosa • Malabar Porotta',
     subtitle: 'Taste local South Indian comfort food! Tava fried seer fish, steaming white idlis with hot sambar and trio of chutneys, crispy ghee roast dosa, and flaky porotta with chicken roast.',
     bg: 'linear-gradient(135deg, rgba(35, 25, 15, 0.95), rgba(15, 10, 5, 0.95))'
-  },
-  alcohol: {
-    title: 'Nalla Thinnunga Bar & Lounge',
-    eyebrow: '🍷 Jack Daniel\'s • Old Monk • Bacardi • Magic Moments • Honey Bee • Chilled Beers',
-    subtitle: 'Savor premium spirits and craft beers in our dark lounge. Explore Tennessee whiskey, vatted dark rums, triple-distilled grain vodkas, fine brandies, gins, and ice-cold beers.',
-    bg: 'linear-gradient(135deg, rgba(20, 10, 30, 0.95), rgba(10, 5, 15, 0.95))'
-  },
-  whiskey: {
-    title: 'Whiskey Lounge (Tennessee, Single Malts & Blends)',
-    eyebrow: '🥃 Jack Daniel\'s • Amrut Single Malt • Royal Challenge • Signature • McDowell\'s No.1',
-    subtitle: 'Taste iconic charcoal-mellowed Tennessee whiskey, award-winning Indian single malts, and classic grain whiskies served in 60ml pegs with ice, water, or soda.',
-    bg: 'linear-gradient(135deg, rgba(30, 15, 10, 0.95), rgba(15, 8, 5, 0.95))'
-  },
-  rum: {
-    title: 'Legendary Rum Collection',
-    eyebrow: '🍹 Old Monk XXX Dark Rum • Bacardi Superior White Rum • Captain Morgan Spiced',
-    subtitle: 'Iconic 7-year vatted dark rums, smooth white rums, and spiced Caribbean blends served with cola, ice, or fresh mixers.',
-    bg: 'linear-gradient(135deg, rgba(35, 20, 10, 0.95), rgba(15, 10, 5, 0.95))'
-  },
-  vodka: {
-    title: 'Vodka & Gin Lounge',
-    eyebrow: '🍸 Magic Moments • Absolut • Smirnoff • Blue Riband Gin • Bombay Sapphire',
-    subtitle: 'Triple-distilled grain vodkas and vapor-infused London dry gins. Enjoy neat, on the rocks, or mixed with fresh citrus & tonic.',
-    bg: 'linear-gradient(135deg, rgba(15, 25, 35, 0.95), rgba(5, 10, 15, 0.95))'
-  },
-  brandy: {
-    title: 'Premium Fine Grape Brandies',
-    eyebrow: '🍷 Honey Bee Brandy • Morpheus XO • Mansion House French Brandy',
-    subtitle: 'Smooth aged brandies infused with honey and oak notes. Warm, aromatic, and rich French grape spirits served in snifter glasses.',
-    bg: 'linear-gradient(135deg, rgba(30, 15, 20, 0.95), rgba(12, 5, 10, 0.95))'
-  },
-  beer: {
-    title: 'Chilled Beers & Craft Brews',
-    eyebrow: '🍺 Kingfisher Premium • Bira 91 White • Heineken Dutch Lager • British Empire Strong',
-    subtitle: 'Ice-cold lager pints, Belgian craft wheat beers, and strong malt brews. Served chilled with roasted bar snacks and finger food.',
-    bg: 'linear-gradient(135deg, rgba(25, 30, 15, 0.95), rgba(10, 15, 5, 0.95))'
   }
 };
 
@@ -256,42 +220,6 @@ function renderCategoryGrid() {
             </div>
           ` : ''}
 
-          ${(item.isCustomizableAlcohol || item.category === 'Alcohol' || item.cuisine === 'Alcohol') ? `
-            <div class="beverage-options-box alcohol-options-box" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.8rem; border-radius: var(--radius-md); border: 1px solid var(--accent-gold-glow);">
-              
-              <div class="beverage-option-row" style="margin-bottom: 0.5rem;">
-                <span class="bev-option-label" style="font-weight:700; color:var(--accent-gold);">🥃 Serving Portion:</span>
-                <select id="portion_${item.id}" class="bev-select" onchange="updateAlcoholPrice('${item.id}', ${item.price})">
-                  ${item.isBeer ? `
-                    <option value="pint" data-mult="1.0">🍺 330ml Pint (₹${item.price})</option>
-                    <option value="can" data-mult="1.4">🍺 500ml Can (₹${Math.round(item.price * 1.4)})</option>
-                    <option value="largebottle" data-mult="1.8">🍺 650ml Large Bottle (₹${Math.round(item.price * 1.8)})</option>
-                  ` : `
-                    <option value="shot" data-mult="0.6">🥃 30ml Shot / Small (₹${Math.round(item.price * 0.6)})</option>
-                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹${item.price})</option>
-                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter / Large (₹${Math.round(item.price * 2.5)})</option>
-                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹${Math.round(item.price * 9.0)})</option>
-                  `}
-                </select>
-              </div>
-
-              <div class="beverage-option-row">
-                <span class="bev-option-label" style="font-weight:700; color:var(--accent-gold);">🍗 Bar Touchings / Side Dish:</span>
-                <select id="sidedish_${item.id}" class="bev-select" onchange="updateAlcoholPrice('${item.id}', ${item.price})">
-                  <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
-                  <option value="Roasted Masala Peanuts" data-price="60">🥜 Masala Peanuts (+₹60)</option>
-                  <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
-                  <option value="Roasted Spiced Cashews" data-price="120">🌰 Spiced Cashews (+₹120)</option>
-                  <option value="Tava Seer Fish Fry" data-price="250">🐟 Tava Fish Fry (+₹250)</option>
-                  <option value="Egg Pepper Fry" data-price="90">🥚 Egg Pepper Fry (+₹90)</option>
-                  <option value="Crispy Roasted Papad" data-price="40">🫓 Crispy Papad (+₹40)</option>
-                  <option value="Cheese Balls & Dip" data-price="140">🧀 Cheese Balls (+₹140)</option>
-                </select>
-              </div>
-
-            </div>
-          ` : ''}
-
           <div class="menu-card-footer">
             <span class="menu-price" id="price-${item.id}">₹${item.price}</span>
             <div class="card-actions">
@@ -307,27 +235,6 @@ function renderCategoryGrid() {
       </article>
     `;
   }).join('');
-}
-
-function updateAlcoholPrice(dishId, basePrice) {
-  const portionEl = document.getElementById(`portion_${dishId}`);
-  const sideEl = document.getElementById(`sidedish_${dishId}`);
-  const priceEl = document.getElementById(`price-${dishId}`);
-
-  let mult = 1.0;
-  if (portionEl) {
-    const selectedOption = portionEl.options[portionEl.selectedIndex];
-    mult = parseFloat(selectedOption.dataset.mult || '1.0');
-  }
-
-  let sideAdd = 0;
-  if (sideEl) {
-    const selectedSide = sideEl.options[sideEl.selectedIndex];
-    sideAdd = parseFloat(selectedSide.dataset.price || '0');
-  }
-
-  const finalCalc = Math.round(basePrice * mult) + sideAdd;
-  if (priceEl) priceEl.textContent = `₹${finalCalc}`;
 }
 
 function updatePortionPrice(dishId, newPrice) {
@@ -374,30 +281,7 @@ function addDishToCart(dishId) {
     bevOptionsText = ` (${sugarVal}, ${strengthVal})`;
   }
 
-  // Check Alcohol Portion & Side Dish Options
-  if (item.isCustomizableAlcohol || item.category === 'Alcohol' || item.cuisine === 'Alcohol') {
-    const portionEl = document.getElementById(`portion_${dishId}`);
-    const sideEl = document.getElementById(`sidedish_${dishId}`);
 
-    let mult = 1.0;
-    let portionLabel = '60ml Peg';
-    if (portionEl) {
-      const opt = portionEl.options[portionEl.selectedIndex];
-      mult = parseFloat(opt.dataset.mult || '1.0');
-      portionLabel = opt.text.split('(₹')[0].trim();
-    }
-
-    let sideAdd = 0;
-    let sideLabel = '';
-    if (sideEl && sideEl.value !== 'No Side Dish') {
-      const sOpt = sideEl.options[sideEl.selectedIndex];
-      sideAdd = parseFloat(sOpt.dataset.price || '0');
-      sideLabel = ` + ${sOpt.value}`;
-    }
-
-    finalPrice = Math.round(item.price * mult) + sideAdd;
-    bevOptionsText = ` (${portionLabel}${sideLabel})`;
-  }
 
   const cartItemId = item.id + (portionName ? '-' + portionName.trim().toLowerCase().replace(/[^a-z]/g, '') : '') + (bevOptionsText ? '-' + bevOptionsText.trim().toLowerCase().replace(/[^a-z]/g, '') : '');
   const existing = cart.find(c => c.id === cartItemId);

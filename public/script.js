@@ -238,7 +238,6 @@ function renderSidebarPreview(item) {
 
   const spice = item.spiceLevel || 'Medium';
   const prepTime = item.prepTime || '20 mins';
-  const isAlc = item.isCustomizableAlcohol || item.category === 'Alcohol' || item.cuisine === 'Alcohol';
 
   previewContent.innerHTML = `
     <div class="sidebar-preview-card" style="background: var(--bg-surface); padding: 1.1rem; border-radius: var(--radius-md); border: 1.5px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem;">
@@ -258,40 +257,6 @@ function renderSidebarPreview(item) {
         </div>
       </div>
 
-      ${isAlc ? `
-        <div class="alcohol-preview-options" style="background: rgba(230, 182, 85, 0.08); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--accent-gold-glow); display: flex; flex-direction: column; gap: 0.6rem;">
-          <div>
-            <label style="font-size: 0.82rem; font-weight: 700; color: var(--accent-gold); display: block; margin-bottom: 0.3rem;">🥃 Select Portion Size:</label>
-            <select id="previewPortionSelect" onchange="updatePreviewAlcoholPrice(${item.price})" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.88rem; font-weight: 600;">
-              ${item.isBeer ? `
-                <option value="pint" data-mult="1.0">🍺 330ml Pint (₹${item.price})</option>
-                <option value="can" data-mult="1.4">🍺 500ml Can (₹${Math.round(item.price * 1.4)})</option>
-                <option value="largebottle" data-mult="1.8">🍺 650ml Large Bottle (₹${Math.round(item.price * 1.8)})</option>
-              ` : `
-                <option value="shot" data-mult="0.6">🥃 30ml Shot / Small (₹${Math.round(item.price * 0.6)})</option>
-                <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹${item.price})</option>
-                <option value="quarter" data-mult="2.5">🥃 180ml Quarter / Large (₹${Math.round(item.price * 2.5)})</option>
-                <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹${Math.round(item.price * 9.0)})</option>
-              `}
-            </select>
-          </div>
-
-          <div>
-            <label style="font-size: 0.82rem; font-weight: 700; color: var(--accent-gold); display: block; margin-bottom: 0.3rem;">🍗 Pair Bar Side Dish / Touchings:</label>
-            <select id="previewSideSelect" onchange="updatePreviewAlcoholPrice(${item.price})" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.88rem; font-weight: 600;">
-              <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
-              <option value="Roasted Masala Peanuts" data-price="60">🥜 Masala Peanuts (+₹60)</option>
-              <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
-              <option value="Roasted Spiced Cashews" data-price="120">🌰 Spiced Cashews (+₹120)</option>
-              <option value="Tava Seer Fish Fry" data-price="250">🐟 Tava Fish Fry (+₹250)</option>
-              <option value="Egg Pepper Fry" data-price="90">🥚 Egg Pepper Fry (+₹90)</option>
-              <option value="Crispy Roasted Papad" data-price="40">🫓 Crispy Papad (+₹40)</option>
-              <option value="Cheese Balls & Dip" data-price="140">🧀 Cheese Balls (+₹140)</option>
-            </select>
-          </div>
-        </div>
-      ` : ''}
-
       <div style="display: flex; flex-direction: column; gap: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border-light);">
         <div style="display: flex; justify-content: space-between; align-items: center;">
           <span id="previewPriceTag" style="font-size: 1.35rem; font-weight: 800; color: var(--accent-gold);">${formatCurrency(item.price)}</span>
@@ -310,27 +275,6 @@ function renderSidebarPreview(item) {
   `;
 }
 
-function updatePreviewAlcoholPrice(basePrice) {
-  const portionEl = document.getElementById('previewPortionSelect');
-  const sideEl = document.getElementById('previewSideSelect');
-  const priceEl = document.getElementById('previewPriceTag');
-
-  let mult = 1.0;
-  if (portionEl) {
-    const selectedOption = portionEl.options[portionEl.selectedIndex];
-    mult = parseFloat(selectedOption.dataset.mult || '1.0');
-  }
-
-  let sideAdd = 0;
-  if (sideEl) {
-    const selectedSide = sideEl.options[sideEl.selectedIndex];
-    sideAdd = parseFloat(selectedSide.dataset.price || '0');
-  }
-
-  const finalCalc = Math.round(basePrice * mult) + sideAdd;
-  if (priceEl) priceEl.textContent = formatCurrency(finalCalc);
-}
-
 let sidebarQty = 1;
 function adjustPreviewQty(delta) {
   sidebarQty = Math.max(1, sidebarQty + delta);
@@ -342,37 +286,11 @@ function addSelectedDishFromSidebar() {
   if (!selectedMenuItem) return;
 
   const item = selectedMenuItem;
-  let finalPrice = item.price;
-  let optionText = '';
-
-  if (item.isCustomizableAlcohol || item.category === 'Alcohol' || item.cuisine === 'Alcohol') {
-    const portionEl = document.getElementById('previewPortionSelect');
-    const sideEl = document.getElementById('previewSideSelect');
-
-    let mult = 1.0;
-    let portionLabel = '60ml Peg';
-    if (portionEl) {
-      const opt = portionEl.options[portionEl.selectedIndex];
-      mult = parseFloat(opt.dataset.mult || '1.0');
-      portionLabel = opt.text.split('(₹')[0].trim();
-    }
-
-    let sideAdd = 0;
-    let sideLabel = '';
-    if (sideEl && sideEl.value !== 'No Side Dish') {
-      const sOpt = sideEl.options[sideEl.selectedIndex];
-      sideAdd = parseFloat(sOpt.dataset.price || '0');
-      sideLabel = ` + ${sOpt.value}`;
-    }
-
-    finalPrice = Math.round(item.price * mult) + sideAdd;
-    optionText = ` (${portionLabel}${sideLabel})`;
-  }
 
   addToCart({
-    id: item.id + (optionText ? '-' + optionText.trim().toLowerCase().replace(/[^a-z0-9]/g, '') : ''),
-    name: item.name + optionText,
-    price: finalPrice,
+    id: item.id,
+    name: item.name,
+    price: item.price,
     image: item.image
   }, sidebarQty);
 
@@ -381,57 +299,6 @@ function addSelectedDishFromSidebar() {
   if (qtyEl) qtyEl.textContent = '1';
 }
 
-function updateHomeAlcPrice(key, basePrice) {
-  const portionEl = document.getElementById(`home_portion_${key}`);
-  const sideEl = document.getElementById(`home_side_${key}`);
-  const priceEl = document.getElementById(`home_price_${key}`);
-
-  let mult = 1.0;
-  if (portionEl) {
-    const selectedOption = portionEl.options[portionEl.selectedIndex];
-    mult = parseFloat(selectedOption.dataset.mult || '1.0');
-  }
-
-  let sideAdd = 0;
-  if (sideEl) {
-    const selectedSide = sideEl.options[sideEl.selectedIndex];
-    sideAdd = parseFloat(selectedSide.dataset.price || '0');
-  }
-
-  const finalCalc = Math.round(basePrice * mult) + sideAdd;
-  if (priceEl) priceEl.textContent = formatCurrency(finalCalc);
-}
-
-function addHomeAlcToCart(id, name, basePrice, img, key) {
-  const portionEl = document.getElementById(`home_portion_${key}`);
-  const sideEl = document.getElementById(`home_side_${key}`);
-
-  let mult = 1.0;
-  let portionLabel = '60ml Peg';
-  if (portionEl) {
-    const opt = portionEl.options[portionEl.selectedIndex];
-    mult = parseFloat(opt.dataset.mult || '1.0');
-    portionLabel = opt.text.split('(₹')[0].trim();
-  }
-
-  let sideAdd = 0;
-  let sideLabel = '';
-  if (sideEl && sideEl.value !== 'No Side Dish') {
-    const sOpt = sideEl.options[sideEl.selectedIndex];
-    sideAdd = parseFloat(sOpt.dataset.price || '0');
-    sideLabel = ` + ${sOpt.value}`;
-  }
-
-  const finalPrice = Math.round(basePrice * mult) + sideAdd;
-  const optionText = ` (${portionLabel}${sideLabel})`;
-
-  addToCart({
-    id: id + '-' + optionText.trim().toLowerCase().replace(/[^a-z0-9]/g, ''),
-    name: name + optionText,
-    price: finalPrice,
-    image: img
-  }, 1);
-}
 
 /* ==========================================================================
    IMAGE LIGHTBOX MODAL PREVIEW
