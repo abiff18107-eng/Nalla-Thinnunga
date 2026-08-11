@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="100%" height="100%" fill="#efe9e2"/>
+  <g fill="#6b4b3a">
+    <path d="M200 360c80-90 220-110 420-40 60 22 120 80 120 80H200z"/>
+    <circle cx="420" cy="300" r="36"/>
+  </g>
+  <text x="50%" y="520" font-family="Verdana" font-size="36" fill="#47322a" text-anchor="middle">Truffle Mushroom Risotto</text>
+</svg>

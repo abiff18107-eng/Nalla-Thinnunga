@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dish Varieties & Collections | Nalla Thinnungaa</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="topbar-wrapper">
+    <nav class="topbar container">
+      <a class="brand" href="index.html#home">
+        <span class="brand-badge">✨</span>
+        <span class="brand-text">Nalla Thinnungaa</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#cuisines">Categories & Cuisines</a></li>
+        <li><a href="checkout.html" class="nav-highlight">Bill & Checkout 🧾</a></li>
+        <li><a href="index.html#reviews">Reviews ⭐</a></li>
+        <li><a href="reservations.html">View Bookings 📋</a></li>
+      </ul>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button type="button" class="button button-secondary button-topbar" onclick="toggleCartDrawer()">
+          🧾 Bill Cart (<span id="topCartCount">0</span>)
+        </button>
+        <a class="button button-topbar" href="index.html#reservation">Book Table</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Dynamic Category Hero Section -->
+  <section class="category-hero" id="catHero">
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <a href="index.html#cuisines" class="back-link">← Back to Cuisines Overview</a>
+      <span class="eyebrow" id="catEyebrow">✨ Special Variety Collection</span>
+      <h1 id="catTitle">Biryani Varieties & Dum Festival</h1>
+      <p id="catSubtitle">Explore our hand-crafted biryani dishes, slow dum cooked with authentic saffron basmati rice, tender meats, and secret fragrant spice blends.</p>
+      
+      <!-- Category Selector Quick Tabs -->
+      <div class="cat-pill-bar">
+        <a href="category.html?cat=biryani" class="cat-pill-btn" data-cat="biryani">🍲 Biryani Special</a>
+        <a href="category.html?cat=mandhi" class="cat-pill-btn" data-cat="mandhi">🍖 Arabian Mandhi</a>
+        <a href="category.html?cat=alcohol" class="cat-pill-btn" data-cat="alcohol">🍷 Bar & Spirits</a>
+        <a href="category.html?cat=whiskey" class="cat-pill-btn" data-cat="whiskey">🥃 Whiskey</a>
+        <a href="category.html?cat=rum" class="cat-pill-btn" data-cat="rum">🍹 Rum</a>
+        <a href="category.html?cat=beer" class="cat-pill-btn" data-cat="beer">🍺 Beer</a>
+        <a href="category.html?cat=vodka" class="cat-pill-btn" data-cat="vodka">🍸 Vodka & Gin</a>
+        <a href="category.html?cat=brandy" class="cat-pill-btn" data-cat="brandy">🍷 Brandy</a>
+        <a href="category.html?cat=local" class="cat-pill-btn" data-cat="local">🌴 South Indian Specials</a>
+        <a href="category.html?cat=beverages" class="cat-pill-btn" data-cat="beverages">☕ Tea & Coffee</a>
+        <a href="category.html?cat=juices" class="cat-pill-btn" data-cat="juices">🧃 Fresh Juices</a>
+        <a href="category.html?cat=indian" class="cat-pill-btn" data-cat="indian">🍛 Indian Curries</a>
+        <a href="category.html?cat=chinese" class="cat-pill-btn" data-cat="chinese">🥢 Chinese Wok</a>
+        <a href="category.html?cat=western" class="cat-pill-btn" data-cat="western">🥩 Western Mains</a>
+        <a href="category.html?cat=dessert" class="cat-pill-btn" data-cat="dessert">🍨 Desserts</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container section">
+    <!-- Filter & Search Controls Toolbar -->
+    <div class="toolbar-box">
+      <div class="toolbar-flex">
+        <div class="diet-filter-group">
+          <button type="button" class="filter-tab active" onclick="filterDiet('all')">All Dishes</button>
+          <button type="button" class="filter-tab" onclick="filterDiet('veg')">🟢 Pure Veg</button>
+          <button type="button" class="filter-tab" onclick="filterDiet('nonveg')">🔴 Non-Veg</button>
+        </div>
+
+        <div class="toolbar-search-wrap">
+          <input type="text" id="dishSearchInput" placeholder="Search dish name, spice, or ingredient..." oninput="handleSearchInput(event)" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Varieties Grid -->
+    <div id="categoryGrid" class="cards category-grid-view">
+      <!-- Dynamic Dish Variety Cards Rendered via category.js -->
+    </div>
+  </main>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cartDrawer" class="cart-drawer-overlay" onclick="toggleCartDrawer(false)">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div class="cart-drawer-header">
+        <h3>🧾 Table Bill Summary</h3>
+        <button type="button" class="cart-close-btn" onclick="toggleCartDrawer(false)">✕</button>
+      </div>
+
+      <div id="drawerCartBody" class="cart-drawer-body">
+        <!-- Rendered cart items -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Subtotal</span>
+          <span id="drawerSubtotal">₹0.00</span>
+        </div>
+        <div class="cart-total-row">
+          <span>GST & Service (5%)</span>
+          <span id="drawerTax">₹0.00</span>
+        </div>
+        <div class="cart-total-row grand-total">
+          <span>Total Bill</span>
+          <span id="drawerGrandTotal">₹0.00</span>
+        </div>
+
+        <!-- Payment Method Selection in Drawer -->
+        <div id="drawerPaymentBox" style="margin-top: 1rem;">
+          <div class="payment-methods" style="margin: 0.5rem 0;">
+            <label class="payment-label">
+              <input type="radio" name="drawerPayment" value="card" checked onchange="setDrawerPaymentMethod('card')" /> 💳 Card
+            </label>
+            <label class="payment-label">
+              <input type="radio" name="drawerPayment" value="upi" onchange="setDrawerPaymentMethod('upi')" /> 📱 UPI
+            </label>
+            <label class="payment-label">
+              <input type="radio" name="drawerPayment" value="cash" onchange="setDrawerPaymentMethod('cash')" /> 💵 Cash
+            </label>
+          </div>
+
+          <div id="drawerPaymentDetailsBox" style="margin-bottom: 0.8rem;">
+            <!-- Dynamically populated in category.js -->
+          </div>
+        </div>
+
+        <button type="button" id="drawerCheckoutBtn" class="button button-primary button-full" onclick="completeDrawerCheckout()" style="margin-top: 0.5rem;">
+          Pay Bill & Complete Order →
+        </button>
+
+        <a href="checkout.html" class="button button-secondary button-full" style="margin-top: 0.5rem; text-align: center; font-size: 0.85rem;">
+          Go to Separate Bill Checkout Page 🧾 →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Bill Receipt Modal Component -->
+  <div id="receiptModal" class="modal-overlay" onclick="closeReceiptModal(event)">
+    <div class="modal-card receipt-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeReceiptModal(true)">✕</button>
+      <div id="receiptModalContent" class="receipt-modal-body">
+        <!-- Dynamic Paid Receipt Details rendered via JS -->
+      </div>
+      <div class="receipt-modal-actions">
+        <button type="button" class="button button-secondary" onclick="window.print()">🖨️ Print Receipt</button>
+        <button type="button" class="button button-primary" onclick="closeReceiptModal(true)">Done & Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a class="brand" href="index.html#home">
+          <span class="brand-badge">✨</span>
+          <span class="brand-text">Nalla Thinnungaa</span>
+        </a>
+        <p>Premium multi-cuisine dining experience blending bold Indian spices, wok-fried Chinese delicacies, and refined Western mains in a dark atmospheric setting.</p>
+      </div>
+
+      <div class="footer-info-col">
+        <h4>Location & Contact</h4>
+        <p>📍 Location: <a href="https://www.google.com/maps/search/?api=1&query=Marthandam+Bus+Stand" target="_blank" rel="noopener noreferrer" class="footer-contact-link">Marthandam Bus Stand, Kanyakumari (Open in Google Maps 🗺️)</a></p>
+        <p>⏰ Open Daily: 12:00 PM – 11:30 PM</p>
+        <p>💬 WhatsApp: <a href="https://wa.me/918903718820?text=Hello%20Nalla%20Thinnungaa,%20I%20would%20like%20to%20inquire%20about%20a%20table%20booking" target="_blank" rel="noopener noreferrer" class="footer-contact-link">+91 89037 18820 (Click for WhatsApp 📲)</a></p>
+        <p>✉️ Email: <a href="mailto:abinesh18x@gmail.com" class="footer-contact-link">abinesh18x@gmail.com (Click to Email 📧)</a></p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Quick Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">About Our Restaurant</a></li>
+          <li><a href="index.html#cuisines">Explore Cuisines</a></li>
+          <li><a href="category.html?cat=biryani">Biryani Varieties</a></li>
+          <li><a href="category.html?cat=mandhi">Mandhi Varieties</a></li>
+          <li><a href="index.html#reservation">Book Table</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container">
+      <p>© 2026 Nalla Thinnungaa. All Rights Reserved. Crafted for fine dining lovers.</p>
+    </div>
+  </footer>
+
+  <script src="category.js"></script>
+</body>
+</html>

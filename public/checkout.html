@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill & Order Checkout | Nalla Thinnungaa</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="checkout-page-body">
+
+  <!-- Sticky Top Navigation -->
+  <header class="topbar-wrapper">
+    <nav class="topbar container">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">✨</span>
+        <span class="brand-text">Nalla Thinnungaa</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#cuisines">Cuisines</a></li>
+        <li><a href="category.html?cat=biryani">Dish Varieties 🍲</a></li>
+        <li><a href="category.html?cat=alcohol">Bar & Lounge 🍷</a></li>
+        <li><a href="checkout.html" class="nav-highlight active-nav">Bill & Order 🧾</a></li>
+        <li><a href="index.html#reviews">Reviews ⭐</a></li>
+        <li><a href="reservations.html">View Bookings 📋</a></li>
+      </ul>
+      <a class="button button-topbar" href="index.html#reservation">Book Table</a>
+    </nav>
+  </header>
+
+  <main class="section standalone-page checkout-main">
+    <div class="container">
+      
+      <!-- Checkout Header Banner -->
+      <div class="page-header text-center">
+        <span class="eyebrow">🧾 Express Table Billing & Checkout</span>
+        <h2>Order Bill & Payment Next Steps</h2>
+        <p class="section-subtext">Review your selected dishes, table details, choose your payment method (UPI, Cash, Card), and get your instant tax invoice bill receipt.</p>
+        
+        <div class="checkout-breadcrumbs">
+          <a href="index.html">Home</a> &rsaquo; 
+          <a href="category.html?cat=biryani">Menu Categories</a> &rsaquo; 
+          <span class="active-crumb">Bill & Checkout</span>
+        </div>
+      </div>
+
+      <!-- Checkout 2-Column Hub Grid -->
+      <div class="checkout-grid-container">
+        
+        <!-- Left Column: Step 1 & Step 2 Card -->
+        <div class="checkout-col-left">
+          
+          <!-- Step 1 Card: Cart Items & Subtotal -->
+          <div class="sidebar-box accessible-step-card checkout-card">
+            <div class="sidebar-box-header checkout-card-header">
+              <span class="sidebar-icon">🍽️</span>
+              <div>
+                <h3>Step 1: Review Table Bill Items</h3>
+                <p class="step-sub">Modify dish quantities or add extra items from the menu.</p>
+              </div>
+            </div>
+
+            <div id="checkoutCartItems" class="checkout-items-list">
+              <!-- Dynamically populated via script.js -->
+            </div>
+
+            <!-- Quick Add Dish Selector -->
+            <div class="quick-add-box">
+              <label for="checkoutQuickSelect" class="field-label-sm">➕ Add Extra Dish to Bill:</label>
+              <select id="checkoutQuickSelect" class="select-input-sm" onchange="handleCheckoutQuickAdd(event)">
+                <option value="">-- Pick a dish to add --</option>
+              </select>
+            </div>
+
+            <div class="checkout-bill-summary">
+              <div class="summary-row">
+                <span>Items Subtotal</span>
+                <span id="checkoutSubtotal">₹0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>GST & Service Charge (5%)</span>
+                <span id="checkoutTax">₹0.00</span>
+              </div>
+              <div class="summary-row grand-total">
+                <span>Total Payable Amount</span>
+                <span id="checkoutGrandTotal">₹0.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 Card: Dining Table & Guest Info -->
+          <div class="sidebar-box accessible-step-card checkout-card" style="margin-top: 1.5rem;">
+            <div class="sidebar-box-header checkout-card-header">
+              <span class="sidebar-icon">📍</span>
+              <div>
+                <h3>Step 2: Table & Customer Information</h3>
+                <p class="step-sub">Provide table number or dining details for server identification.</p>
+              </div>
+            </div>
+
+            <form id="checkoutCustomerForm" class="customer-info-form">
+              <div class="form-row-2col">
+                <div class="field-group">
+                  <label for="custTableNo">Dining Table / Section *</label>
+                  <input type="text" id="custTableNo" placeholder="e.g. Table 04 / AC Hall" value="Table 04" required />
+                </div>
+                <div class="field-group">
+                  <label for="custName">Customer Full Name *</label>
+                  <input type="text" id="custName" placeholder="e.g. Abinesh Kumar" value="Abinesh Kumar" required />
+                </div>
+              </div>
+
+              <div class="form-row-2col">
+                <div class="field-group">
+                  <label for="custPhone">Mobile Number *</label>
+                  <input type="tel" id="custPhone" placeholder="e.g. 9876543210" value="9876543210" required />
+                </div>
+                <div class="field-group">
+                  <label for="custNotes">Special Kitchen Instructions (Optional)</label>
+                  <input type="text" id="custNotes" placeholder="e.g. Medium spicy, less oil" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Step 3 Payment Selection & Next Steps -->
+        <div class="checkout-col-right">
+          <div class="sidebar-box accessible-step-card checkout-card checkout-payment-sticky">
+            <div class="sidebar-box-header checkout-card-header">
+              <span class="sidebar-icon">💳</span>
+              <div>
+                <h3>Step 3: Select Payment Method</h3>
+                <p class="step-sub">Choose your preferred next step to complete billing.</p>
+              </div>
+            </div>
+
+            <!-- Payment Type Selector Tabs -->
+            <div class="payment-tabs-grid">
+              <button type="button" class="pay-tab-btn active" data-method="upi" onclick="switchCheckoutPayMethod('upi')">
+                <span class="pay-icon">📱</span>
+                <span class="pay-title">UPI QR / GPay</span>
+                <span class="pay-badge">Instant</span>
+              </button>
+
+              <button type="button" class="pay-tab-btn" data-method="card" onclick="switchCheckoutPayMethod('card')">
+                <span class="pay-icon">💳</span>
+                <span class="pay-title">Card</span>
+                <span class="pay-badge">Visa/Master</span>
+              </button>
+
+              <button type="button" class="pay-tab-btn" data-method="cash" onclick="switchCheckoutPayMethod('cash')">
+                <span class="pay-icon">💵</span>
+                <span class="pay-title">Cash</span>
+                <span class="pay-badge">At Table</span>
+              </button>
+            </div>
+
+            <!-- Payment Content View Cards -->
+            <div class="payment-panel-wrapper" id="checkoutPaymentDetails">
+              <!-- Dynamically populated via script.js -->
+            </div>
+
+            <!-- Action Complete Button -->
+            <div class="checkout-action-wrap">
+              <button type="button" id="btnCompleteCheckout" class="button button-primary button-full btn-checkout-pay" onclick="processCheckoutOrder()">
+                ✨ Pay & View Detailed Bill Receipt 🧾
+              </button>
+
+              <div class="checkout-guarantee">
+                🔒 Safe & Encrypted Payment · Official Tax Invoice Receipt Provided
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Detailed Bill Receipt Modal Component -->
+  <div id="receiptModal" class="modal-overlay" onclick="closeReceiptModal(event)">
+    <div class="modal-card receipt-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeReceiptModal(true)">✕</button>
+      <div id="receiptModalContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

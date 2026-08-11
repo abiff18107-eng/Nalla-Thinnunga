@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nalla Thinnungaa | Luxury Multi-Cuisine Dining & Reservations</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="topbar-wrapper">
+    <nav class="topbar container">
+      <a class="brand" href="#home">
+        <span class="brand-badge">✨</span>
+        <span class="brand-text">Nalla Thinnungaa</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#cuisines">Cuisines & Varieties</a></li>
+        <li><a href="category.html?cat=biryani">Explore Dishes 🍲</a></li>
+        <li><a href="category.html?cat=alcohol">Bar & Lounge 🍷</a></li>
+        <li><a href="checkout.html" class="nav-highlight">Bill & Checkout 🧾</a></li>
+        <li><a href="#reviews">Reviews ⭐</a></li>
+        <li><a href="#reservation">Book Table</a></li>
+        <li><a href="reservations.html" class="nav-highlight">View Bookings 📋</a></li>
+      </ul>
+      <a class="button button-topbar" href="#reservation">Book Table</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-text-col">
+        <span class="eyebrow">✨ Taste the best of Indian, Chinese, & Western Kitchens</span>
+        <h1>Discover bold flavors & elegant dining in a dark, refined setting</h1>
+        <p>Nalla Thinnungaa blends contemporary style with rich culinary traditions. Savor handcrafted curries, wok-tossed delights, and gourmet steaks served in an ambient dark lounge.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#reservation">Reserve A Table</a>
+          <a class="button button-secondary" href="reservations.html">📋 View Confirmed Bookings</a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">4.9★</span>
+            <span class="stat-label">Guest Rating</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Cuisines</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Fresh Ingredients</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-col">
+        <div class="hero-card">
+          <div class="hero-card-img-wrap" onclick="triggerImagePreview('/assets/royal-butter-chicken.png', 'Signature Royal Butter Chicken', 'Indian Special · ₹399', 'Creamy tomato curry with tender chicken infused with rich butter and authentic spices.')">
+            <img src="/assets/royal-butter-chicken.png" alt="Signature Platter" class="hero-card-img" />
+            <div class="img-badge">Chef's Special</div>
+            <div class="img-hover-overlay">🔍 Click to Preview</div>
+          </div>
+          <div class="hero-card-body">
+            <span class="eyebrow-sm">Featured Platter</span>
+            <h2>Royal Butter Chicken</h2>
+            <p>A rich tender chicken curry in velvety tomato-butter gravy, served with naan.</p>
+            <div class="hero-card-footer">
+              <span class="price">₹399</span>
+              <a href="category.html?cat=indian" class="button button-sm">Order Dish</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container split-2col">
+        <div class="about-text">
+          <span class="eyebrow">Our Philosophy</span>
+          <h2>A premium dining destination with a moody, modern ambience</h2>
+          <p>At Nalla Thinnungaa, we believe dining is an art form. We specialize in refined Indian, Chinese, and Western flavors, served with polished hospitality in a dark, atmospheric setting created for memorable moments.</p>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🔥</div>
+              <div>
+                <h3>Bold Flavors</h3>
+                <p>Authentic spices, complex sauces, and elegant plating.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🍸</div>
+              <div>
+                <h3>Modern Ambience</h3>
+                <p>Dark interior design, ambient lighting, and high-end aesthetic.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">👨‍🍳</div>
+              <div>
+                <h3>Chef Curated</h3>
+                <p>Signature dishes prepared with seasonal fresh ingredients.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🍷</div>
+              <div>
+                <h3>Warm Hospitality</h3>
+                <p>Attentive staff with effortless digital ordering and booking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-col">
+          <div class="about-image-card" onclick="triggerImagePreview('/assets/restaurant-hero.png', 'Nalla Thinnungaa Dark Lounge', 'Ambient Dining Room', 'Experience fine dining in our sleek, candlelit dark interior lounge.')">
+            <img src="/assets/restaurant-hero.png" alt="Restaurant Interior Lounge" class="about-img" />
+            <div class="about-image-overlay"></div>
+            <div class="about-image-badge">
+              <span>🏛️ Dark Lounge & Private Dining</span>
+              <span class="badge-sub">Click for full view</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuisines Section -->
+    <section class="section categories" id="cuisines">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Cuisine Selection</span>
+          <h2>Indian, Chinese & Western — All Under One Roof</h2>
+          <p class="section-subtext">Carefully crafted menus showcasing authentic recipes and modern culinary twists.</p>
+        </div>
+        
+        <div class="category-grid category-grid-6">
+          <!-- Biryani Card -->
+          <article class="category-card category-highlight-card" onclick="window.location.href='category.html?cat=biryani'">
+            <div class="category-card-badge">🔥 Hot Favorites</div>
+            <div class="category-header">
+              <div class="category-icon">🍲</div>
+              <span class="category-tag">Dum Special</span>
+            </div>
+            <h3>Biryani Festival</h3>
+            <p>Hyderabadi Chicken Dum, Mutton Dum, Thalassery & Lucknowi Awadhi biryani varieties cooked slow with saffron and pure ghee.</p>
+            <a href="category.html?cat=biryani" class="category-link">Explore All Biryani Types →</a>
+          </article>
+
+          <!-- Mandhi Card -->
+          <article class="category-card category-highlight-card" onclick="window.location.href='category.html?cat=mandhi'">
+            <div class="category-card-badge">🍖 Royal Arabian</div>
+            <div class="category-header">
+              <div class="category-icon">🍖</div>
+              <span class="category-tag">Yemeni Feast</span>
+            </div>
+            <h3>Arabian Mandhi</h3>
+            <p>Al Faham Chicken, Peri Peri Grill, Mutton Lamb Ribs, and Crispy Fish Mandhi served over fragrant saffron butter rice.</p>
+            <a href="category.html?cat=mandhi" class="category-link">Explore All Mandhi Types →</a>
+          </article>
+
+          <!-- Atmospheric Bar & Lounge Card -->
+          <article class="category-card category-highlight-card" onclick="window.location.href='category.html?cat=alcohol'">
+            <div class="category-card-badge">🍷 Bar & Lounge</div>
+            <div class="category-header">
+              <div class="category-icon">🥃</div>
+              <span class="category-tag">Spirits & Beers</span>
+            </div>
+            <h3>Fine Spirits & Beers</h3>
+            <p>Jack Daniel's Tennessee Whiskey, Old Monk Dark Rum, Bacardi White Rum, Magic Moments Vodka, Honey Bee Brandy, Gins & Chilled Beers.</p>
+            <a href="category.html?cat=alcohol" class="category-link">Explore Bar Menu →</a>
+          </article>
+
+          <!-- South Indian Local Specials Card -->
+          <article class="category-card category-highlight-card" onclick="window.location.href='category.html?cat=local'">
+            <div class="category-card-badge">🌴 Local Favorites</div>
+            <div class="category-header">
+              <div class="category-icon">🥘</div>
+              <span class="category-tag">Nadan Specials</span>
+            </div>
+            <h3>South Indian Local Dishes</h3>
+            <p>Seer Fish Tava Fry, hot steamed Idlis with hot Sambar & 3 Chutneys, crispy Ghee Roast Dosa, and Malabar Porotta with Chicken Roast.</p>
+            <a href="category.html?cat=local" class="category-link">Explore Local Dishes →</a>
+          </article>
+
+          <!-- Tea, Coffee & Chaya Corner Card -->
+          <article class="category-card category-highlight-card" onclick="window.location.href='category.html?cat=beverages'">
+            <div class="category-card-badge">☕ Custom Brews</div>
+            <div class="category-header">
+              <div class="category-icon">☕</div>
+              <span class="category-tag">Sugar & Strength Options</span>
+            </div>
+            <h3>Tea, Coffee & Chaya</h3>
+            <p>Nadan Strong Kerala Chaya, South Indian Filter Coffee, Sulaimani & Ginger Tea with your choice of Sugar (With/Less/Without) & Brew Strength (Light/Medium/Strong).</p>
+            <a href="category.html?cat=beverages" class="category-link">Custom Tea & Coffee →</a>
+          </article>
+
+          <!-- Fresh Juices & Shakes Card -->
+          <article class="category-card" onclick="window.location.href='category.html?cat=juices'">
+            <div class="category-header">
+              <div class="category-icon">🧃</div>
+              <span class="category-tag">100% Chilled Fresh</span>
+            </div>
+            <h3>Fresh Juices & Shakes</h3>
+            <p>Mint Lime Kulukki Sarbath, Fresh Tender Coconut Water (Elaneer), Malabar Royal Avil Milk Shake, Mango Shake & Fruit Falooda.</p>
+            <a href="category.html?cat=juices" class="category-link">Explore Juices & Shakes →</a>
+          </article>
+
+          <!-- Indian Cuisine Card -->
+          <article class="category-card" onclick="window.location.href='category.html?cat=indian'">
+            <div class="category-header">
+              <div class="category-icon">🍛</div>
+              <span class="category-tag">Classic & Spiced</span>
+            </div>
+            <h3>Indian Curries</h3>
+            <p>Velvety Butter Chicken, Paneer Masalas, charcoal Tandoori kebabs, and garlic butter naan baskets.</p>
+            <a href="category.html?cat=indian" class="category-link">Explore Indian Curries →</a>
+          </article>
+
+          <!-- Chinese Cuisine Card -->
+          <article class="category-card" onclick="window.location.href='category.html?cat=chinese'">
+            <div class="category-header">
+              <div class="category-icon">🥢</div>
+              <span class="category-tag">Wok & Szechuan</span>
+            </div>
+            <h3>Chinese Wok</h3>
+            <p>High-flame wok-fried rice, dim sums, fiery Chilli Paneer, and garlic soy Schezwan noodles.</p>
+            <a href="category.html?cat=chinese" class="category-link">Explore Chinese Dishes →</a>
+          </article>
+
+          <!-- Western Cuisine Card -->
+          <article class="category-card" onclick="window.location.href='category.html?cat=western'">
+            <div class="category-header">
+              <div class="category-icon">🥩</div>
+              <span class="category-tag">Gourmet & Steaks</span>
+            </div>
+            <h3>Western Mains</h3>
+            <p>Black truffle mushroom risottos, grilled ribeye steaks, creamy Alfredo pasta, and wood-fired appetizers.</p>
+            <a href="category.html?cat=western" class="category-link">Explore Western Mains →</a>
+          </article>
+
+          <!-- Desserts Card -->
+          <article class="category-card" onclick="window.location.href='category.html?cat=dessert'">
+            <div class="category-header">
+              <div class="category-icon">🍨</div>
+              <span class="category-tag">Sweet Indulgence</span>
+            </div>
+            <h3>Desserts & Sweets</h3>
+            <p>Belgian dark chocolate mousse, hot saffron gulab jamuns with ice cream, and crisp Arabian kunafa.</p>
+            <a href="category.html?cat=dessert" class="category-link">Explore Desserts →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Bar & Lounge Section -->
+    <section class="section bar-lounge-section" id="bar" style="background: linear-gradient(180deg, rgba(20, 10, 30, 0.6), rgba(10, 5, 15, 0.9)); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow" style="color: var(--accent-gold);">🍷 Nalla Thinnungaa Dark Bar & Lounge</span>
+          <h2>Premium Spirits, Beers & Bar Touchings</h2>
+          <p class="section-subtext">Featuring Jack Daniel's, Old Monk, Bacardi, Magic Moments, Honey Bee, craft beers, custom portion sizes (Shot, Peg, Quarter, Bottle), and spicy bar touchings.</p>
+        </div>
+
+        <div class="bar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-top: 2rem;">
+          
+          <!-- Jack Daniels Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/jack-daniels.png" alt="Jack Daniel's Whiskey" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 40% ABV</span>
+              <span class="cuisine-badge">Tennessee Whiskey</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Jack Daniel's Old No. 7</h3>
+                <span class="rating-badge">★ 5.0</span>
+              </div>
+              <p class="menu-card-desc">Charcoal-mellowed Tennessee whiskey with smooth caramel, oak, and vanilla notes.</p>
+              
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🥃 Serving Portion:</label>
+                  <select id="home_portion_jackdaniels" onchange="updateHomeAlcPrice('jackdaniels', 420)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="shot" data-mult="0.6">🥃 30ml Shot (₹252)</option>
+                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹420)</option>
+                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter (₹1050)</option>
+                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹3780)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_jackdaniels" onchange="updateHomeAlcPrice('jackdaniels', 420)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Roasted Masala Peanuts" data-price="60">🥜 Masala Peanuts (+₹60)</option>
+                    <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
+                    <option value="Roasted Spiced Cashews" data-price="120">🌰 Spiced Cashews (+₹120)</option>
+                    <option value="Tava Seer Fish Fry" data-price="250">🐟 Tava Fish Fry (+₹250)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_jackdaniels" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹420</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('jack-daniels-whiskey', 'Jack Daniel\'s Old No. 7 Whiskey', 420, '/assets/jack-daniels.png', 'jackdaniels')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Old Monk Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/old-monk.png" alt="Old Monk Rum" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 42.8% ABV</span>
+              <span class="cuisine-badge">Dark Rum</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Old Monk XXX Dark Rum</h3>
+                <span class="rating-badge">★ 5.0</span>
+              </div>
+              <p class="menu-card-desc">Legendary 7-year vatted dark rum with rich molasses, vanilla, and chocolate notes.</p>
+
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🥃 Serving Portion:</label>
+                  <select id="home_portion_oldmonk" onchange="updateHomeAlcPrice('oldmonk', 120)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="shot" data-mult="0.6">🥃 30ml Shot (₹72)</option>
+                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹120)</option>
+                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter (₹300)</option>
+                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹1080)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_oldmonk" onchange="updateHomeAlcPrice('oldmonk', 120)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Roasted Masala Peanuts" data-price="60" selected>🥜 Masala Peanuts (+₹60)</option>
+                    <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
+                    <option value="Egg Pepper Fry" data-price="90">🥚 Egg Pepper Fry (+₹90)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_oldmonk" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹180</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('old-monk-dark-rum', 'Old Monk XXX Dark Rum', 120, '/assets/old-monk.png', 'oldmonk')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bacardi White Rum Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/bacardi.png" alt="Bacardi White Rum" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 40% ABV</span>
+              <span class="cuisine-badge">White Rum</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Bacardi Carta Blanca</h3>
+                <span class="rating-badge">★ 4.8</span>
+              </div>
+              <p class="menu-card-desc">World-famous light white rum with subtle almond and fresh floral notes.</p>
+
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🥃 Serving Portion:</label>
+                  <select id="home_portion_bacardi" onchange="updateHomeAlcPrice('bacardi', 220)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="shot" data-mult="0.6">🥃 30ml Shot (₹132)</option>
+                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹220)</option>
+                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter (₹550)</option>
+                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹1980)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_bacardi" onchange="updateHomeAlcPrice('bacardi', 220)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Cheese Balls & Dip" data-price="140" selected>🧀 Cheese Balls (+₹140)</option>
+                    <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_bacardi" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹360</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('bacardi-white-rum', 'Bacardi White Rum', 220, '/assets/bacardi.png', 'bacardi')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Magic Moments Vodka Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/magic-moments.png" alt="Magic Moments Vodka" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 37.5% ABV</span>
+              <span class="cuisine-badge">Grain Vodka</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Magic Moments Vodka</h3>
+                <span class="rating-badge">★ 4.8</span>
+              </div>
+              <p class="menu-card-desc">Triple-distilled premium grain vodka with clean crisp mouthfeel.</p>
+
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🥃 Serving Portion:</label>
+                  <select id="home_portion_magicmoments" onchange="updateHomeAlcPrice('magicmoments', 140)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="shot" data-mult="0.6">🥃 30ml Shot (₹84)</option>
+                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹140)</option>
+                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter (₹350)</option>
+                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹1260)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_magicmoments" onchange="updateHomeAlcPrice('magicmoments', 140)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Roasted Spiced Cashews" data-price="120" selected>🌰 Spiced Cashews (+₹120)</option>
+                    <option value="Crispy Roasted Papad" data-price="40">🫓 Crispy Papad (+₹40)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_magicmoments" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹260</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('magic-moments-vodka', 'Magic Moments Vodka', 140, '/assets/magic-moments.png', 'magicmoments')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Honey Bee Brandy Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/honey-bee.png" alt="Honey Bee Brandy" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 42.8% ABV</span>
+              <span class="cuisine-badge">Grape Brandy</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Honey Bee Brandy</h3>
+                <span class="rating-badge">★ 4.8</span>
+              </div>
+              <p class="menu-card-desc">Smooth Indian fine grape brandy infused with warm honey notes and delicate oak aging.</p>
+
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🥃 Serving Portion:</label>
+                  <select id="home_portion_honeybee" onchange="updateHomeAlcPrice('honeybee', 130)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="shot" data-mult="0.6">🥃 30ml Shot (₹78)</option>
+                    <option value="peg" data-mult="1.0" selected>🥃 60ml Peg / Half (₹130)</option>
+                    <option value="quarter" data-mult="2.5">🥃 180ml Quarter (₹325)</option>
+                    <option value="bottle" data-mult="9.0">🍾 750ml Full Bottle (₹1170)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_honeybee" onchange="updateHomeAlcPrice('honeybee', 130)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Egg Pepper Fry" data-price="90" selected>🥚 Egg Pepper Fry (+₹90)</option>
+                    <option value="Spicy Chicken 65" data-price="180">🍗 Spicy Chicken 65 (+₹180)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_honeybee" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹220</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('honey-bee-brandy', 'Honey Bee Fine Grape Brandy', 130, '/assets/honey-bee.png', 'honeybee')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Chilled Beers Card -->
+          <article class="menu-card" style="background: var(--bg-card); border: 1px solid var(--accent-gold-glow);">
+            <div class="menu-card-img-wrap" style="height: 180px;">
+              <img src="/assets/beers.png" alt="Chilled Beers" class="menu-card-img" style="object-fit: cover;" />
+              <span class="diet-tag veg">🟢 4.8% ABV</span>
+              <span class="cuisine-badge">Chilled Beers</span>
+            </div>
+            <div class="menu-card-content" style="padding: 1.25rem;">
+              <div class="menu-card-title-row">
+                <h3 style="font-size: 1.15rem;">Kingfisher / Bira 91 / Heineken</h3>
+                <span class="rating-badge">★ 4.9</span>
+              </div>
+              <p class="menu-card-desc">Ice-cold lager pints and craft wheat beers served chilled with roasted bar nuts.</p>
+
+              <div class="bar-card-options" style="margin-top: 0.8rem; background: rgba(230, 182, 85, 0.05); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍺 Select Size:</label>
+                  <select id="home_portion_beers" onchange="updateHomeAlcPrice('beers', 190)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="pint" data-mult="1.0" selected>🍺 330ml Pint (₹190)</option>
+                    <option value="can" data-mult="1.4">🍺 500ml Can (₹266)</option>
+                    <option value="largebottle" data-mult="1.8">🍺 650ml Large Bottle (₹342)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); display: block;">🍗 Bar Side Dish / Touchings:</label>
+                  <select id="home_side_beers" onchange="updateHomeAlcPrice('beers', 190)" style="width: 100%; padding: 0.4rem; border-radius: 4px; background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-light); font-size: 0.82rem; font-weight: 600;">
+                    <option value="No Side Dish" data-price="0">🚫 No Side Dish</option>
+                    <option value="Roasted Masala Peanuts" data-price="60" selected>🥜 Masala Peanuts (+₹60)</option>
+                    <option value="Tava Seer Fish Fry" data-price="250">🐟 Tava Fish Fry (+₹250)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="menu-card-footer" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span class="menu-price" id="home_price_beers" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-gold);">₹250</span>
+                <button type="button" class="button button-primary button-sm" onclick="addHomeAlcToCart('kingfisher-premium-beer', 'Kingfisher Premium Beer Pint', 190, '/assets/beers.png', 'beers')">+ Add to Bill</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Simplified & Accessible Table Bill Checkout Section -->
+    <section class="section menu-section" id="menu" aria-label="Table Bill Checkout Center">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Express Dining & Billing</span>
+          <h2>Table Bill & Order Checkout</h2>
+          <p class="section-subtext">Select dishes to add to your table bill, review itemized totals, and pay securely via Card, UPI QR, or Cash.</p>
+        </div>
+
+        <div class="billing-hub-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; align-items: start;">
+          
+          <!-- Step 1 Card: Select Dish & Preview -->
+          <div class="sidebar-box accessible-step-card" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="sidebar-box-header" style="padding-bottom: 0.8rem; margin-bottom: 0.5rem; border-bottom: 2px solid var(--accent-gold-glow);">
+              <span class="sidebar-icon" style="font-size: 1.4rem;">🍲</span>
+              <h3 style="font-size: 1.25rem; color: var(--accent-gold);">Step 1: Choose Dish to Add</h3>
+            </div>
+
+            <div class="field-group">
+              <label for="quickDishSelect" style="font-weight: 700; font-size: 0.95rem; display: block; margin-bottom: 0.5rem; color: var(--text-primary);">
+                Select Dish from Menu
+              </label>
+              <select id="quickDishSelect" onchange="handleQuickDishSelectChange()" aria-label="Select Dish from Menu" style="width: 100%; min-height: 48px; padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); border: 1.5px solid var(--border-light); font-size: 0.95rem; font-weight: 600;">
+                <option value="">-- Pick a dish to preview and add --</option>
+              </select>
+            </div>
+
+            <!-- Dish Preview Card Container -->
+            <div id="previewContent" class="accessible-preview-wrapper" style="min-height: 180px;">
+              <div class="preview-empty" style="padding: 1.5rem 1rem; text-align: center; background: rgba(255,255,255,0.02); border-radius: var(--radius-md); border: 1px dashed var(--border-light);">
+                <div class="empty-icon" style="font-size: 2.2rem; margin-bottom: 0.5rem;">🍽️</div>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Select any dish from the menu dropdown above to see its photo, price, and instant preview.</p>
+              </div>
+            </div>
+
+            <!-- Category Collections Shortcut Button -->
+            <a href="category.html?cat=biryani" class="button button-secondary button-full" style="text-align: center; font-size: 0.88rem; min-height: 46px; justify-content: center; margin-top: 0.5rem;">
+              Explore Full Category Variety (Biryani, Mandhi, Curries...) →
+            </a>
+          </div>
+
+          <!-- Step 2 Card: Table Bill & Payment Checkout -->
+          <div class="sidebar-box accessible-step-card">
+            <div class="sidebar-box-header" style="padding-bottom: 0.8rem; margin-bottom: 0.5rem; border-bottom: 2px solid var(--accent-gold-glow);">
+              <span class="sidebar-icon" style="font-size: 1.4rem;">🧾</span>
+              <h3 style="font-size: 1.25rem; color: var(--accent-gold);">Step 2: Table Bill & Checkout</h3>
+            </div>
+            
+            <div id="orderCart">
+              <!-- Dynamically populated via script.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Reviews & Ratings Section -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Guest Testimonials & Feedback</span>
+          <h2>What Our Guests Say About Nalla Thinnungaa</h2>
+          <p class="section-subtext">Real reviews and ratings from our guests dining in Marthandam.</p>
+        </div>
+
+        <!-- Rating Summary Bar -->
+        <div class="rating-summary-banner">
+          <div class="summary-score-col">
+            <span class="big-score" id="avgRatingScore">4.9</span>
+            <div class="stars-gold" id="avgRatingStars">★★★★★</div>
+            <span class="sub-label">Based on <strong id="totalReviewsCount">3</strong> verified dining reviews</span>
+          </div>
+
+          <div class="summary-stats-divider"></div>
+
+          <div class="summary-highlights">
+            <div class="highlight-chip">
+              <span>🍲 Biryani Rating</span>
+              <strong>4.9 / 5.0 ★</strong>
+            </div>
+            <div class="highlight-chip">
+              <span>🍖 Mandhi Rating</span>
+              <strong>5.0 / 5.0 ★</strong>
+            </div>
+            <div class="highlight-chip">
+              <span>🏛️ Ambience Rating</span>
+              <strong>4.8 / 5.0 ★</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Reviews Layout -->
+        <div class="reviews-split-grid">
+          <!-- Left Column: Add Review Form -->
+          <div class="review-form-panel">
+            <div class="panel-header">
+              <h3>✍️ Leave a Guest Review</h3>
+              <p>Share your dining experience, favorite dishes, and rating with us.</p>
+            </div>
+
+            <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+              <div class="field-group">
+                <label for="reviewName">Your Name</label>
+                <input type="text" id="reviewName" placeholder="e.g. Abinesh Kumar" required />
+              </div>
+
+              <div class="field-group">
+                <label>Overall Rating</label>
+                <div class="star-rating-picker" id="starPicker">
+                  <span class="star-btn" data-val="1" onclick="setFormRating(1)">★</span>
+                  <span class="star-btn" data-val="2" onclick="setFormRating(2)">★</span>
+                  <span class="star-btn" data-val="3" onclick="setFormRating(3)">★</span>
+                  <span class="star-btn" data-val="4" onclick="setFormRating(4)">★</span>
+                  <span class="star-btn active" data-val="5" onclick="setFormRating(5)">★</span>
+                </div>
+                <input type="hidden" id="reviewRatingInput" value="5" />
+              </div>
+
+              <div class="field-group">
+                <label for="reviewDish">Recommended Dish</label>
+                <select id="reviewDish">
+                  <option value="Hyderabadi Chicken Dum Biryani">🍲 Hyderabadi Chicken Dum Biryani</option>
+                  <option value="Al Faham Chicken Mandhi">🍖 Al Faham Chicken Mandhi</option>
+                  <option value="Royal Mutton Dum Biryani">🍖 Royal Mutton Dum Biryani</option>
+                  <option value="Spicy Peri Peri Mandhi">🌶️ Spicy Peri Peri Mandhi</option>
+                  <option value="Royal Butter Chicken">🍛 Royal Butter Chicken</option>
+                  <option value="Chilli Paneer">🥢 Chilli Paneer</option>
+                  <option value="Truffle Mushroom Risotto">🥩 Truffle Mushroom Risotto</option>
+                  <option value="Chocolate Mousse">🍨 Chocolate Mousse</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="reviewComment">Your Review</label>
+                <textarea id="reviewComment" rows="3" placeholder="Tell us about the flavor, service, and atmosphere..." required></textarea>
+              </div>
+
+              <button type="submit" class="button button-primary button-full">Submit Your Review ⭐</button>
+              <p id="reviewStatus" class="status-msg"></p>
+            </form>
+          </div>
+
+          <!-- Right Column: Live Guest Reviews Feed -->
+          <div class="reviews-feed-panel">
+            <div class="panel-header flex-between">
+              <h3>💬 Verified Guest Reviews</h3>
+              <span class="live-dot">🟢 Realtime MongoDB Feed</span>
+            </div>
+
+            <div id="reviewsFeedList" class="reviews-feed-list">
+              <p class="preview-empty">Loading guest reviews...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section (Clean Centered Form) -->
+    <section class="section reservation" id="reservation">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Table Booking</span>
+          <h2>Reserve Your Dining Experience</h2>
+          <p class="section-subtext">Book your table online for tonight or upcoming dates at Nalla Thinnungaa.</p>
+          <div style="margin-top: 1.25rem;">
+            <a href="reservations.html" class="button button-secondary">📋 View Confirmed Bookings →</a>
+          </div>
+        </div>
+
+        <!-- Clean Centered Reservation Form -->
+        <div class="reservation-single-wrapper">
+          <div class="reservation-panel reservation-panel-centered">
+            <div class="panel-header text-center">
+              <h3>✨ Book A Table</h3>
+              <p>Fill out your party details and preferred arrival time below.</p>
+            </div>
+
+            <form id="reservationForm">
+              <div class="field-row-2col">
+                <div class="field-group">
+                  <label for="name">Full Name</label>
+                  <input id="name" name="name" type="text" placeholder="e.g. Rahul Sharma" required />
+                </div>
+                <div class="field-group">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="rahul@example.com" required />
+                </div>
+              </div>
+
+              <div class="field-row-2col">
+                <div class="field-group">
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required />
+                </div>
+                <div class="field-group">
+                  <label for="guests">Number of Guests</label>
+                  <input id="guests" name="guests" type="number" min="1" max="20" value="2" required />
+                </div>
+              </div>
+
+              <div class="field-row-2col">
+                <div class="field-group">
+                  <label for="date">Reservation Date</label>
+                  <input id="date" name="date" type="date" required />
+                </div>
+                <div class="field-group">
+                  <label for="time">Time Slot</label>
+                  <input id="time" name="time" type="time" required />
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="message">Special Requests (Optional)</label>
+                <textarea id="message" name="message" rows="3" placeholder="Anniversary, birthday setup, high chair request..."></textarea>
+              </div>
+
+              <button class="button button-primary button-full" type="submit">Confirm Reservation</button>
+              
+              <div class="status-container text-center">
+                <p class="status" id="statusMessage"></p>
+                <div id="viewBookingsBtnWrap" style="display:none; margin-top:1.25rem;">
+                  <a href="reservations.html" class="button button-secondary">📋 View All Confirmed Bookings →</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Lightbox Modal Component -->
+  <div id="imageModal" class="modal-overlay" onclick="closeImageModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeImageModal(true)">✕</button>
+      <div class="modal-image-container">
+        <img id="modalImage" src="" alt="Dish Preview" class="modal-img" />
+      </div>
+      <div class="modal-content">
+        <span id="modalCategory" class="eyebrow">Category</span>
+        <h2 id="modalTitle">Dish Title</h2>
+        <p id="modalDescription">Detailed dish description...</p>
+        
+        <div class="modal-footer-row">
+          <span id="modalPrice" class="modal-price-tag">₹0</span>
+          <button id="modalAddCartBtn" class="button button-primary button-sm">Add to Bill Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Bill Receipt Modal Component -->
+  <div id="receiptModal" class="modal-overlay" onclick="closeReceiptModal(event)">
+    <div class="modal-card receipt-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeReceiptModal(true)">✕</button>
+      <div id="receiptModalContent" class="receipt-modal-body">
+        <!-- Dynamic Paid Receipt Details rendered via JS -->
+      </div>
+      <div class="receipt-modal-actions">
+        <button type="button" class="button button-secondary" onclick="window.print()">🖨️ Print Receipt</button>
+        <button type="button" class="button button-primary" onclick="closeReceiptModal(true)">Done & Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a class="brand" href="#home">
+          <span class="brand-badge">✨</span>
+          <span class="brand-text">Nalla Thinnungaa</span>
+        </a>
+        <p>Premium multi-cuisine dining experience blending bold Indian spices, wok-fried Chinese delicacies, and refined Western mains in a dark atmospheric setting.</p>
+      </div>
+
+      <div class="footer-info-col">
+        <h4>Location & Contact</h4>
+        <p>📍 Location: <a href="https://www.google.com/maps/search/?api=1&query=Marthandam+Bus+Stand" target="_blank" rel="noopener noreferrer" class="footer-contact-link">Marthandam Bus Stand, Kanyakumari (Open in Google Maps 🗺️)</a></p>
+        <p>⏰ Open Daily: 12:00 PM – 11:30 PM</p>
+        <p>💬 WhatsApp: <a href="https://wa.me/918903718820?text=Hello%20Nalla%20Thinnungaa,%20I%20would%20like%20to%20inquire%20about%20a%20table%20booking" target="_blank" rel="noopener noreferrer" class="footer-contact-link">+91 89037 18820 (Click for WhatsApp 📲)</a></p>
+        <p>✉️ Email: <a href="mailto:abinesh18x@gmail.com" class="footer-contact-link">abinesh18x@gmail.com (Click to Email 📧)</a></p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Quick Navigation</h4>
+        <ul>
+          <li><a href="#about">About Our Restaurant</a></li>
+          <li><a href="#cuisines">Explore Cuisines</a></li>
+          <li><a href="category.html?cat=biryani">Dish Variety Collections</a></li>
+          <li><a href="#reservation">Book Table</a></li>
+          <li><a href="reservations.html">View Confirmed Bookings 📋</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container">
+      <p>© 2026 Nalla Thinnungaa. All Rights Reserved. Crafted for fine dining lovers.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

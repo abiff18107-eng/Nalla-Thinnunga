@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="100%" height="100%" fill="#dbe7c9"/>
+  <g fill="#7a8b43">
+    <ellipse cx="450" cy="340" rx="270" ry="90"/>
+    <circle cx="380" cy="300" r="28"/>
+    <circle cx="470" cy="330" r="24"/>
+    <circle cx="540" cy="300" r="20"/>
+  </g>
+  <text x="50%" y="520" font-family="Verdana" font-size="36" fill="#4c5b28" text-anchor="middle">Veg Fried Rice</text>
+</svg>
