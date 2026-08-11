@@ -1,5 +1,5 @@
 // ==========================================================================
-// NALLA THINNUNGAA - DISH CATEGORY & VARIETY SHOWCASE LOGIC
+// Nalla Thinnunga - DISH CATEGORY & VARIETY SHOWCASE LOGIC
 // ==========================================================================
 
 let categoryItems = [];
@@ -65,7 +65,7 @@ const categoryMeta = {
     bg: 'linear-gradient(135deg, rgba(35, 25, 15, 0.95), rgba(15, 10, 5, 0.95))'
   },
   alcohol: {
-    title: 'Nalla Thinnungaa Bar & Lounge',
+    title: 'Nalla Thinnunga Bar & Lounge',
     eyebrow: '🍷 Jack Daniel\'s • Old Monk • Bacardi • Magic Moments • Honey Bee • Chilled Beers',
     subtitle: 'Savor premium spirits and craft beers in our dark lounge. Explore Tennessee whiskey, vatted dark rums, triple-distilled grain vodkas, fine brandies, gins, and ice-cold beers.',
     bg: 'linear-gradient(135deg, rgba(20, 10, 30, 0.95), rgba(10, 5, 15, 0.95))'
@@ -633,7 +633,7 @@ function completeDrawerCheckout() {
     receiptModalContent.innerHTML = `
       <div class="printable-receipt">
         <div class="receipt-header text-center">
-          <div class="receipt-brand">✨ NALLA THINNUNGAA ✨</div>
+          <div class="receipt-brand">✨ Nalla Thinnunga ✨</div>
           <p class="receipt-subtitle">Luxury Multi-Cuisine Dining & Lounge</p>
           <p class="receipt-address">📍 Marthandam Bus Stand, Kanyakumari, Tamil Nadu · 💬 +91 89037 18820</p>
           <div class="receipt-divider"></div>

@@ -1,5 +1,5 @@
 // ==========================================================================
-// NALLA THINNUNGAA - RESTAURANT INTERACTIVE LOGIC & PAYMENT RECEIPT MODAL
+// Nalla Thinnunga - RESTAURANT INTERACTIVE LOGIC & PAYMENT RECEIPT MODAL
 // ==========================================================================
 
 const reservationForm = document.getElementById('reservationForm');
@@ -906,7 +906,7 @@ function completeCheckout(totalAmount) {
     receiptModalContent.innerHTML = `
       <div class="printable-receipt">
         <div class="receipt-header text-center">
-          <div class="receipt-brand">✨ NALLA THINNUNGAA ✨</div>
+          <div class="receipt-brand">✨ Nalla Thinnunga ✨</div>
           <p class="receipt-subtitle">Luxury Multi-Cuisine Dining & Lounge</p>
           <p class="receipt-address">📍 Marthandam Bus Stand, Kanyakumari, Tamil Nadu · 💬 +91 89037 18820</p>
           
@@ -1011,7 +1011,7 @@ function renderReservations(list) {
       <div class="cart-empty" style="padding: 3rem 1rem;">
         <div class="empty-icon">📅</div>
         <h3>No Confirmed Bookings Yet</h3>
-        <p>Be the first to reserve a table at Nalla Thinnungaa!</p>
+        <p>Be the first to reserve a table at Nalla Thinnunga!</p>
         <a href="/#reservation" class="button button-primary button-sm" style="margin-top:1rem;">Book A Table Now</a>
       </div>
     `;
